@@ -1,12 +1,22 @@
 var tik = setInterval(() => {
-  var lyf = document.getElementById('digit')
-  lyf.classList.toggle("digit");
-  if (lyf.innerText == 0) {
-    document.getElementById('container').classList.toggle("containeroverlay")
-    window.location="./Birthday.html"
-    clearInterval(tik)
+  var lyf = document.getElementById('digit');
+
+  // Thay đổi giá trị so sánh từ == 0 thành === '0'
+  if (lyf.innerText === '0') {
+    var container = document.getElementById('container');
+
+    // Thay đổi classList.toggle thành classList.add để đảm bảo class 'containeroverlay' được thêm vào
+    container.classList.add("containeroverlay");
+
+    // Sử dụng window.location.href thay vì window.location để chuyển hướng trang web
+    window.location.href = "./Birthday.html";
+
+    clearInterval(tik);
   } else {
-    lyf.innerText -= 1
+    // Giảm giá trị chỉ khi nó không phải là 0
+    lyf.innerText = parseInt(lyf.innerText, 10) - 1;
   }
-  lyf.classList.toggle("digit");
-}, 1000)
+
+  // Thay đổi classList.toggle thành classList.add để đảm bảo class 'digit' được thêm vào
+  lyf.classList.add("digit");
+}, 1000);

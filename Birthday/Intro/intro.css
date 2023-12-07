@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
 
 body {
   cursor: none;
@@ -15,26 +15,28 @@ body {
   background: #1aabe3;
   width: 100%;
   height: 100vh;
-  overflow-y: hidden;
+  overflow: hidden; /* Nếu không cần thiết, bạn có thể xóa dòng này */
 }
 
+/* Tăng chất lượng hiển thị cho phần tử con */
 .container * {
   z-index: 1;
+  backface-visibility: hidden;
 }
 
 .counter {
   display: grid;
   place-items: center;
-  width: 50%;
-  height: 50%;
+  width: 50vw; /* Sử dụng đơn vị vw (viewport width) thay vì % để tránh tràn ra khỏi màn hình */
+  height: 50vh; /* Sử dụng đơn vị vh (viewport height) thay vì % để tránh tràn ra khỏi màn hình */
 }
 
 .digit {
   text-align: center;
-  text-shadow: 18px 20px 0px rgba(49, 78, 99, 0.57);
-  font-size: 18em;
+  text-shadow: 0.1em 0.1em 0.2em rgba(49, 78, 99, 0.57); /* Điều chỉnh giá trị để có hiệu ứng hợp lý */
+  font-size: 13em; /* Thay đổi kích thước font để phù hợp với màn hình */
   color: rgba(255, 255, 255, 0.97);
   -webkit-text-stroke-color: #1679bf;
-  -webkit-text-stroke-width: thin;
-  font-weight: bolder;
+  /*-webkit-text-stroke-width: 1px; /* Thay đổi độ rộng của đường viền */
+  font-weight: bold; /* Sử dụng 'bold' thay vì 'bolder' vì nó có thể tạo ra hiệu ứng không mong muốn */
 }
