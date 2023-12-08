@@ -235,6 +235,7 @@ span {
 .avatar__img {
     width: 200px;
     height: 200px;
+    object-fit: cover;
     border-radius: 50%;
     border: 5px solid rgba(234, 15, 150, 0.9);
     box-shadow: inset 10px 10px 10px rgba(15, 219, 234, 0.9);
